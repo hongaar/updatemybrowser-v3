@@ -1,11 +1,15 @@
 # Mac files
 .DS_Store
 
-# Dependency directories
-/node_modules
+# NPM
+node_modules/
+npm-debug.log*
 
 # lerna files
-/lerna-debug.log
+lerna-debug.log
 
-# Ignore hidden files as default
-.*
+# Ignore .env files
+.env
+
+# Coverage directory
+coverage
