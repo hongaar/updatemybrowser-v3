@@ -2,6 +2,7 @@
   "name": "@umb/studio",
   "version": "1.0.0",
   "author": "Joram van den Boezem <joram@vandenboezem.nl>",
+  "license": "MIT",
   "engines": {
     "node": "12.x"
   },
@@ -9,22 +10,26 @@
     "deploy": "npm run graphql-deploy && npm run sanity-deploy",
     "graphql-deploy": "sanity graphql deploy --playground",
     "sanity-deploy": "sanity deploy",
-    "start": "PORT=3666 sanity start",
+    "start": "sanity start --port 4444",
     "build": "sanity build",
     "test": "sanity check"
   },
   "dependencies": {
     "@sanity/base": "^0.147.8",
     "@sanity/cli": "^0.146.0",
+    "@sanity/color-input": "^0.147.0",
     "@sanity/components": "^0.147.9",
     "@sanity/core": "^0.147.9",
     "@sanity/default-layout": "^0.147.9",
     "@sanity/default-login": "^0.147.0",
     "@sanity/desk-tool": "^0.147.9",
+    "@umb/core": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-icons": "^3.8.0"
+    "react-icons": "^3.8.0",
+    "sanity-plugin-asset-source-cloudinary": "^0.1.0",
+    "sanity-plugin-asset-source-unsplash": "^0.1.3"
   },
   "devDependencies": {}
 }

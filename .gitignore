@@ -1,15 +1,10 @@
-# Mac files
-.DS_Store
-
-# NPM
+# npm / yarn / lerna
 node_modules/
-npm-debug.log*
-
-# lerna files
+yarn-error.log
 lerna-debug.log
 
-# Ignore .env files
+# sensitive
 .env
 
-# Coverage directory
+# tests
 coverage

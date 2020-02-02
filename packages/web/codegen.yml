@@ -1,0 +1,9 @@
+overwrite: true
+schema: 'http://localhost:8888/___graphql'
+generates:
+  src/gqlTypes.ts:
+    plugins:
+      - 'typescript'
+    config:
+      maybeValue:
+        - T

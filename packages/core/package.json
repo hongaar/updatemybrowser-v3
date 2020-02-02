@@ -1,0 +1,7 @@
+{
+    "name": "@umb/core",
+    "version": "1.0.0",
+    "author": "Joram van den Boezem <joram@vandenboezem.nl>",
+    "license": "MIT",
+    "main": "src/index.js"
+}

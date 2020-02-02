@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "Gatsby Demo",
+    "name": "@umb/studio",
     "basePath": "/"
   },
   "plugins": [
@@ -13,16 +13,19 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@sanity/color-input",
+    "asset-source-unsplash",
+    "asset-source-cloudinary"
   ],
   "parts": [
     {
       "name": "part:@sanity/base/schema",
-      "path": "./schemas/schemas.js"
+      "path": "./schema.js"
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./deskStructure.js"
+      "path": "./desk.js"
     }
   ]
 }
