@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "author": "Joram van den Boezem <joram@vandenboezem.nl>",
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "scripts": {
     "deploy": "npm run graphql-deploy && npm run sanity-deploy",
     "graphql-deploy": "sanity graphql deploy --playground",
     "sanity-deploy": "sanity deploy",
-    "start": "sanity start",
+    "start": "PORT=3666 sanity start",
     "build": "sanity build",
     "test": "sanity check"
   },
@@ -26,6 +26,5 @@
     "react-dom": "^16.12.0",
     "react-icons": "^3.8.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

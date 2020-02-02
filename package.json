@@ -1,8 +1,11 @@
 {
   "private": true,
   "name": "root",
+  "workspaces": [
+    "packages/*"
+  ],
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   },
   "scripts": {
     "clean": "lerna clean",
