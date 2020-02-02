@@ -1,4 +1,4 @@
 [build]
-  base = "packages/web/"
-  command = "npm run build"
+  base = ""
+  command = "npm run build --scope @umb/web"
   publish = "packages/web/public"
