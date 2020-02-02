@@ -1,4 +1,4 @@
 [build]
   base = ""
-  command = "npm run build --scope @umb/web"
+  command = "yarn build --scope @umb/web"
   publish = "packages/web/public"
