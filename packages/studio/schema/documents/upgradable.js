@@ -9,6 +9,13 @@ export const upgradable = {
       options: { collapsible: true, collapsed: true }
     }
   ],
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'vendor',
+      media: 'icon'
+    }
+  },
   fields: [
     {
       name: 'category',

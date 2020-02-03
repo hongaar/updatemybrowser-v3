@@ -1,5 +1,8 @@
 {
     "name": "@umb/widget",
     "version": "1.0.0",
-    "author": "Joram van den Boezem <joram@vandenboezem.nl>"
+    "author": "Joram van den Boezem <joram@vandenboezem.nl>",
+    "dependencies": {
+        "@umb/core": "^1.0.0"
+    }
 }

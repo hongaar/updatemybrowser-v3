@@ -3,5 +3,22 @@
     "version": "1.0.0",
     "author": "Joram van den Boezem <joram@vandenboezem.nl>",
     "license": "MIT",
-    "main": "src/index.js"
+    "main": "lib/index.js",
+    "scripts": {
+        "build": "yarn build:embed && yarn build:lib && yarn build:bundle",
+        "build:embed": "ts-node scripts/embed.ts",
+        "build:lib": "tsc",
+        "build:bundle": "webpack"
+    },
+    "dependencies": {
+        "bowser": "^2.9.0"
+    },
+    "devDependencies": {
+        "@sanity/client": "^0.147.3",
+        "@types/node": "^13.7.0",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.7.5",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10"
+    }
 }

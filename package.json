@@ -8,14 +8,15 @@
     "node": ">=10"
   },
   "scripts": {
-    "clean": "lerna clean",
-    "build": "lerna run build",
-    "deploy": "lerna run deploy",
-    "empty-cache": "lerna run empty-cache",
-    "graphql-deploy": "lerna run graphql-deploy",
     "postinstall": "lerna bootstrap",
-    "sanity-deploy": "lerna run sanity-deploy",
-    "start": "lerna run empty-cache && lerna run start --parallel",
+    "start": "lerna run clean:cache && lerna run start --parallel",
+    "start:studio": "lerna run start --scope @umb/studio",
+    "start:web": "lerna run start --scope @umb/web",
+    "build": "lerna run build",
+    "deploy:studio": "lerna run deploy:studio",
+    "deploy:gql": "lerna run deploy:gql",
+    "clean": "lerna clean",
+    "clean:cache": "lerna run clean:cache",
     "test": "lerna run test"
   },
   "devDependencies": {

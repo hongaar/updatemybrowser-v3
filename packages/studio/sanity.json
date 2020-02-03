@@ -16,7 +16,8 @@
     "@sanity/desk-tool",
     "@sanity/color-input",
     "asset-source-unsplash",
-    "asset-source-cloudinary"
+    "asset-source-cloudinary",
+    "@sanity/vision"
   ],
   "parts": [
     {

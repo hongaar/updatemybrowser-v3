@@ -1,7 +1,9 @@
 // First, we must import the schema creator
+// @ts-ignore
 import createSchema from 'part:@sanity/base/schema-creator'
 
 // Then import schema types from any plugins that might expose them
+// @ts-ignore
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
@@ -9,9 +11,10 @@ import {
   blockContent,
   figure,
   localeString,
-  localeText
+  localeText,
+  satisfies
 } from './schema/partials'
-import { site, upgradable } from './schema/documents'
+import { site, upgradable, matcher, source } from './schema/documents'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,10 +28,13 @@ export default createSchema({
     figure,
     localeText,
     localeString,
+    satisfies,
 
     // DOcuments
     site,
-    upgradable
+    upgradable,
+    matcher,
+    source
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

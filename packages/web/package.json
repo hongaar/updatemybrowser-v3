@@ -9,9 +9,9 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop --port 8888",
-    "empty-cache": "gatsby clean",
+    "clean:cache": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "graphql-deploy": "get-graphql-schema http://localhost:8888/___graphql > schema.graphql && graphql-codegen --config codegen.yml"
+    "deploy:gql": "get-graphql-schema http://localhost:8888/___graphql > schema.graphql && graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",

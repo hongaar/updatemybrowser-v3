@@ -9,6 +9,13 @@ export const site = {
       options: { collapsible: true, collapsed: true }
     }
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'domain',
+      media: 'icon'
+    }
+  },
   fields: [
     {
       name: 'title',

@@ -7,10 +7,10 @@
     "node": ">=10"
   },
   "scripts": {
-    "deploy": "npm run graphql-deploy && npm run sanity-deploy",
-    "graphql-deploy": "sanity graphql deploy --playground",
-    "sanity-deploy": "sanity deploy",
     "start": "sanity start --port 4444",
+    "deploy": "yarn deploy:gql && yarn deploy:studio",
+    "deploy:gql": "sanity graphql deploy --playground",
+    "deploy:studio": "sanity deploy",
     "build": "sanity build",
     "test": "sanity check"
   },
@@ -23,6 +23,7 @@
     "@sanity/default-layout": "^0.147.9",
     "@sanity/default-login": "^0.147.0",
     "@sanity/desk-tool": "^0.147.9",
+    "@sanity/vision": "^0.147.9",
     "@umb/core": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
