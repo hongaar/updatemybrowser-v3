@@ -1,4 +1,4 @@
-name: test
+name: update
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     - cron: '0 4 * * *'
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
 
     steps:
