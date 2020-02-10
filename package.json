@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "start": "lerna run clean:cache && lerna run start --parallel",
-    "build": "lerna run build",
+    "build": "lerna run build --ignore @umb/web",
     "test": "jest"
   },
   "devDependencies": {
