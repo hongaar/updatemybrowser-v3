@@ -1,5 +1,4 @@
-import fetch from 'cross-fetch'
-import memo from 'memoize-one'
+import { fetch } from '../fetch'
 import { Document, Slug } from '../types'
 
 // See https://github.com/Fyrd/caniuse
@@ -29,15 +28,9 @@ type CanIUseData = {
   updated: number
 }
 
-const fetchData = memo(async () => {
-  const response = await fetch(URL)
-
-  if (response.status >= 400) {
-    throw new Error('Bad response from server')
-  }
-
-  return (await response.json()) as CanIUseData
-})
+function fetchData() {
+  return fetch<CanIUseData>(URL)
+}
 
 export async function fetchCanIUse(source: CanIUseSource) {
   const data = await fetchData()

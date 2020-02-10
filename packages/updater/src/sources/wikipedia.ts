@@ -1,6 +1,6 @@
-import fetch from 'cross-fetch'
-import memo from 'memoize-one'
 import parser from 'fast-xml-parser'
+
+import { fetch } from '../fetch'
 import { Document, Slug } from '../types'
 
 // See https://en.wikipedia.org/w/api.php?action=help&modules=parse
@@ -41,16 +41,11 @@ function getCorsProxyUrl(url: string) {
   return isNode() ? url : `${CORS_PROXY_URL}${url}`
 }
 
-const fetchData = memo(async (pageId: string) => {
+function fetchData(pageId: string) {
   const url = `${URL}&pageid=${pageId}`
-  const response = await fetch(getCorsProxyUrl(url))
 
-  if (response.status >= 400) {
-    throw new Error('Bad response from server')
-  }
-
-  return (await response.json()) as WikipediaData
-})
+  return fetch<WikipediaData>(getCorsProxyUrl(url))
+}
 
 function findField(data: any, field: string) {
   // Do we have a field?

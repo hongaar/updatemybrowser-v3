@@ -1,5 +1,4 @@
-import fetch from 'cross-fetch'
-import memo from 'memoize-one'
+import { fetch } from '../fetch'
 import { Document, Slug } from '../types'
 
 // Schema: https://developers.whatismybrowser.com/static/main/api-docs/v2/swagger-ui/
@@ -27,22 +26,16 @@ type WhatIsMyBrowserData = {
   }
 }
 
-const fetchData = memo(async () => {
+function fetchData() {
   const key = (process.env.SANITY_STUDIO_WHATISMYBROWSER_TOKEN ||
     process.env.WHATISMYBROWSER_TOKEN) as string
-  const response = await fetch(URL, {
+
+  return fetch<WhatIsMyBrowserData>(URL, {
     headers: {
       'x-api-key': key
     }
   })
-
-  if (response.status >= 400) {
-    console.error(await response.text())
-    throw new Error('Bad response from server')
-  }
-
-  return (await response.json()) as WhatIsMyBrowserData
-})
+}
 
 export async function fetchWhatIsMyBrowser(source: WhatIsMyBrowserSource) {
   const data = await fetchData()
