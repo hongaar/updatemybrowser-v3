@@ -10,17 +10,14 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "start": "lerna run clean:cache && lerna run start --parallel",
-    "start:studio": "lerna run start --scope @umb/studio",
-    "start:web": "lerna run start --scope @umb/web",
     "build": "lerna run build",
-    "deploy:studio": "lerna run deploy:studio",
-    "deploy:gql": "lerna run deploy:gql",
-    "clean": "lerna clean",
-    "clean:cache": "lerna run clean:cache",
-    "test": "lerna run test"
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "jest": "^25.1.0",
     "lerna": "^3.14.1",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "ts-jest": "^25.2.0"
   }
 }

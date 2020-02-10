@@ -1,6 +1,6 @@
-export const source = {
-  name: 'source',
-  title: 'Source',
+export const updater = {
+  name: 'updater',
+  title: 'Updater',
   type: 'document',
   preview: {
     select: {
@@ -35,15 +35,14 @@ export const source = {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Plugin',
-      name: 'plugin',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Wikipedia', value: 'wikipedia' },
-          { title: 'Can I Use', value: 'caniuse' }
-        ]
-      },
+      title: 'Source',
+      name: 'source',
+      type: 'reference',
+      to: [
+        { type: 'sourceWikipedia' },
+        { type: 'sourceCanIUse' },
+        { type: 'sourceWhatIsMyBrowser' }
+      ],
       validation: Rule => Rule.required()
     }
   ]

@@ -1,0 +1,23 @@
+{
+    "name": "@umb/updater",
+    "version": "1.0.0",
+    "author": "Joram van den Boezem <joram@vandenboezem.nl>",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "scripts": {
+        "start": "ts-node bin/update.ts",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@sanity/client": "^0.147.3",
+        "@types/node": "^13.7.0",
+        "ansi-colors": "^4.1.1",
+        "compare-versions": "^3.5.1",
+        "cross-fetch": "^3.0.4",
+        "dotenv": "^8.2.0",
+        "fast-xml-parser": "^3.16.0",
+        "memoize-one": "^5.1.1",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.7.5"
+    }
+}

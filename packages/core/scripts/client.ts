@@ -9,7 +9,7 @@ export const client = sanityClient({
   projectId,
   dataset,
   useCdn: true
-})
+}) as any
 
 function requireConfig(path: string) {
   try {

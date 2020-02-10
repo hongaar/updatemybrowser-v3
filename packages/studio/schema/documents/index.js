@@ -1,4 +1,5 @@
 export * from './site'
 export * from './upgradable'
 export * from './matcher'
-export * from './source'
+export * from './sources'
+export * from './updater'

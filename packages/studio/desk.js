@@ -1,11 +1,18 @@
+// @ts-ignore
 import S from '@sanity/desk-tool/structure-builder'
+// @ts-ignore
+import EyeIcon from 'part:@sanity/base/eye-icon'
+// @ts-ignore
+import EditIcon from 'part:@sanity/base/edit-icon'
 import {
   FaDesktop,
   FaMousePointer,
   FaLaptop,
   FaSearch,
-  FaDownload
+  FaDownload,
+  FaSync
 } from 'react-icons/fa'
+import { SourcePreview } from './preview'
 
 export default () =>
   S.list()
@@ -13,13 +20,11 @@ export default () =>
     .items([
       S.listItem()
         .title('Sites')
-        .schemaType('site')
         .icon(FaDesktop)
         .child(S.documentTypeList('site').title('Sites')),
       S.divider(),
       S.listItem()
         .title('Browsers')
-        .schemaType('upgradable')
         .icon(FaMousePointer)
         .child(
           S.documentTypeList('upgradable')
@@ -28,24 +33,44 @@ export default () =>
             .title('Browsers')
         ),
       S.listItem()
-        .title('Operating systems')
-        .schemaType('upgradable')
+        .title('Operating Systems')
         .icon(FaLaptop)
         .child(
           S.documentTypeList('upgradable')
             .filter('category == $category')
             .params({ category: 'os' })
-            .title('Operating systems')
+            .title('Operating Systems')
         ),
       S.divider(),
       S.listItem()
         .title('Matchers')
-        .schemaType('matcher')
         .icon(FaSearch)
         .child(S.documentTypeList('matcher').title('Matchers')),
       S.listItem()
+        .title('Updaters')
+        .icon(FaSync)
+        .child(S.documentTypeList('updater').title('Updater')),
+      S.listItem()
         .title('Sources')
-        .schemaType('source')
         .icon(FaDownload)
-        .child(S.documentTypeList('source').title('Sources'))
+        .child(
+          S.documentList()
+            .title('Sources')
+            .filter(
+              // Would like to use _type match "source*" but then the Create
+              // button doesn't work...
+              '_type == "sourceWikipedia" || _type == "sourceCanIUse" || _type == "sourceWhatIsMyBrowser"'
+            )
+            .child(documentId =>
+              S.document()
+                .documentId(documentId)
+                .views([
+                  S.view.form().icon(EditIcon),
+                  S.view
+                    .component(SourcePreview)
+                    .icon(EyeIcon)
+                    .title('Preview')
+                ])
+            )
+        )
     ])

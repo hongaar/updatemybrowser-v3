@@ -8,10 +8,10 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "build:gql": "get-graphql-schema http://localhost:8888/___graphql > schema.graphql && graphql-codegen --config codegen.yml",
     "start": "gatsby develop --port 8888",
     "clean:cache": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy:gql": "get-graphql-schema http://localhost:8888/___graphql > schema.graphql && graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",

@@ -14,7 +14,15 @@ import {
   localeText,
   satisfies
 } from './schema/partials'
-import { site, upgradable, matcher, source } from './schema/documents'
+import {
+  site,
+  upgradable,
+  matcher,
+  sourceCanIUse,
+  sourceWikipedia,
+  sourceWhatIsMyBrowser,
+  updater
+} from './schema/documents'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,7 +42,10 @@ export default createSchema({
     site,
     upgradable,
     matcher,
-    source
+    updater,
+    sourceWikipedia,
+    sourceCanIUse,
+    sourceWhatIsMyBrowser
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

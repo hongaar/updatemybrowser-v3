@@ -2,6 +2,7 @@ import { languages } from '@umb/core'
 
 export const localeText = {
   name: 'localeText',
+  title: 'Localized text',
   type: 'object',
   fieldsets: [
     {
