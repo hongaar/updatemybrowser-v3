@@ -37,6 +37,7 @@ const fetchData = memo(async () => {
   })
 
   if (response.status >= 400) {
+    console.error(await response.text())
     throw new Error('Bad response from server')
   }
 
